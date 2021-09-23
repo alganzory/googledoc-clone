@@ -1,13 +1,173 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+*::before,*::after {
+    box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+    background-color: #f3f3f3;
+    margin: 0;
+    font-family:Arial, Helvetica, sans-serif
+}
+
+.container .ql-editor{
+    width: 8.5in;
+    min-height: 11in;
+    padding: 1in;
+    margin: 1rem;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+    background-color: white;
+}
+
+.container .ql-container.ql-snow {
+    border:none;
+    display: flex;
+    justify-content: center;
+}
+
+.container .ql-toolbar.ql-snow{
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 4.8em;
+    z-index: 3;
+    background-color: #f3f3f3;
+    border: none;
+    box-shadow: 0 0 5px 0 rgba(0,0,0,0.5);
+}
+.textEditor-header{ 
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f3f3f3;
+    padding: .5rem 3rem;
+    position: sticky;
+    z-index: 2;
+    top:0em;
+    
+}
+
+.document-title {
+
+    color: #555;
+    font-size: 20px;
+    width: 100vw;
+    padding: .8rem 0rem .8rem 1rem;
+    border-radius: .5rem;
+    border-color: #999;
+    margin-left: .5em;
+    text-transform: capitalize;
+}
+
+.documentsList-header{ 
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 0 6px 3px rgba(0, 0, 0, .2);
+    padding: .5rem 3rem; 
+    margin-bottom: 1.5rem;
+    
+}
+.documentsList-header h2{
+    color: #222;
+    font-size: 26px;
+}
+
+.btn { 
+    background-color: hsl(200, 100%, 50%);
+    color: white;
+    padding: .9em 1.3em;
+    border-radius: .3em;
+    cursor: pointer;
+    border:none;
+    margin: .25em;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.btn:hover {
+    filter: brightness(85%);
+  }
+
+.document-cards-container {
+    width: 95vw;
+    margin: 1rem auto;
+}
+
+.document-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.document-card{ 
+    display: block;
+    text-align: center;
+    position: relative; 
+    border-radius: .25rem;
+    box-shadow: 0 0 6px 3px rgba(0, 0, 0, .2);
+    background-color: white;
+    cursor: pointer;
+    padding: 2rem 1rem 1rem 1rem;   
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    transform: translateY(var(--translate-y, 0)); 
+    transition: 150ms;
+}
+
+.document-card:hover{
+    --translate-y: -2px;
+    box-shadow: 0 0 6px 3px rgba(0, 0, 0, .35);
+}
+
+.document-card-title {
+    text-decoration: none;
+    color: #444;
+    font-size: 21px;
+    padding: 1rem;
+    text-transform: capitalize;
+}
+
+.document-card-title:hover{
+    color:#222;
+    white-space: normal;
+    text-overflow:unset;
+    overflow: visible;
+}
+
+.document-card-date{
+    text-decoration: none;
+    color: #888;
+    font-size: 15px;
+    padding-top: .5rem;
+    line-height: 2em;
+}
+
+
+@page { 
+    margin: 1in;
+
+}
+@media print {
+    body {
+        background: none;
+
+    }
+
+    .container .ql-editor{
+        width: 6.5in;
+        height: 9in;
+        margin: 0;
+        padding: 0;
+        box-shadow: none;
+        align-self: flex-start;
+    }
+
+    .container .ql-toolbar.ql-snow { 
+        display: none;
+    }
+    .textEditor-header{
+        display: none;
+    }
+    
 }
