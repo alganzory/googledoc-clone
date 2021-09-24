@@ -27,7 +27,7 @@ body {
     display: flex;
     justify-content: center;
     position: sticky;
-    top: 4.8em;
+    top: 3.8em;
     z-index: 3;
     background-color: #f3f3f3;
     border: none;
@@ -38,7 +38,7 @@ body {
     justify-content: space-between;
     align-items: center;
     background-color: #f3f3f3;
-    padding: .5rem 3rem;
+    padding: .3rem 2rem;
     position: sticky;
     z-index: 2;
     top:0em;
@@ -47,12 +47,14 @@ body {
 
 .document-title {
 
-    color: #555;
-    font-size: 20px;
+    color: #333;
+    font-size: 18px;
     width: 100vw;
-    padding: .8rem 0rem .8rem 1rem;
+    padding: .6rem 0rem .6rem 1rem;
     border-radius: .5rem;
     border-color: #999;
+    border-width: 0.1px;
+    border-style:solid;
     margin-left: .5em;
     text-transform: capitalize;
 }
@@ -63,25 +65,25 @@ body {
     align-items: center;
     background-color: white;
     box-shadow: 0 0 6px 3px rgba(0, 0, 0, .2);
-    padding: .5rem 3rem; 
+    padding: .1rem 3rem; 
     margin-bottom: 1.5rem;
     
 }
 .documentsList-header h2{
     color: #222;
-    font-size: 26px;
+    font-size: 22px;
 }
 
 .btn { 
     background-color: hsl(200, 100%, 50%);
     color: white;
-    padding: .9em 1.3em;
+    padding: .7em 1em;
     border-radius: .3em;
     cursor: pointer;
     border:none;
     margin: .25em;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 14px;
 }
 
 .btn:hover {
@@ -89,41 +91,53 @@ body {
   }
 
 .document-cards-container {
-    width: 95vw;
+    width: 92.5vw;
     margin: 1rem auto;
 }
 
 .document-cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.4rem;
 }
 
-.document-card{ 
-    display: block;
-    text-align: center;
-    position: relative; 
+.document-card-card { 
+    display: flex;
+    flex-direction: column;
     border-radius: .25rem;
     box-shadow: 0 0 6px 3px rgba(0, 0, 0, .2);
     background-color: white;
-    cursor: pointer;
-    padding: 2rem 1rem 1rem 1rem;   
+    /* padding: 2rem 1rem 1rem 1rem;  */
+    transform: translateY(var(--translate-y, 0)); 
+    transition: 150ms;  
+}
+.document-card{ 
+    display: block;
+    text-align: center;
+    padding: 1.5rem .5rem .5rem .5rem;   
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    transform: translateY(var(--translate-y, 0)); 
-    transition: 150ms;
+    box-shadow: 0 -8px 15px rgba(0, 0, 0, .10);
+    -webkit-box-shadow:0 -8px 15px rgba(0, 0, 0, .10);
+    -moz-box-shadow: 0 -8px 15px rgba(0, 0, 0, .10);
 }
 
-.document-card:hover{
+.document-card-card:hover{
     --translate-y: -2px;
     box-shadow: 0 0 6px 3px rgba(0, 0, 0, .35);
+}
+
+.thumbnail-holder {
+    height: 160px;
+    overflow: hidden;
+    border-radius: 0.25em;
 }
 
 .document-card-title {
     text-decoration: none;
     color: #444;
-    font-size: 21px;
+    font-size: 16px;
     padding: 1rem;
     text-transform: capitalize;
 }
@@ -138,11 +152,14 @@ body {
 .document-card-date{
     text-decoration: none;
     color: #888;
-    font-size: 15px;
+    font-size: 12px;
     padding-top: .5rem;
-    line-height: 2em;
+    line-height: 1.5em;
 }
 
+.document-thumbnail{
+    display: block;
+}
 
 @page { 
     margin: 1in;

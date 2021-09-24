@@ -117,7 +117,7 @@ export default function TextEditor() {
     <>
       <div className="textEditor-header">
         <a
-        style = {{padding: "1em 2em", fontSize:"16px", whiteSpace:"nowrap"}} 
+        style = {{padding: "0.7em 1.3em", fontSize:"16px", whiteSpace:"nowrap"}} 
         className ="btn" href="/documents"> &#129128;&nbsp; Documents  </a>
         <input
           className="document-title"
