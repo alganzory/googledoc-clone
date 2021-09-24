@@ -5,7 +5,7 @@ export default function DocumentsList() {
   const [documentsList, setDocumentsList] = useState([]);
   useEffect(() => {
     axios
-      .get("http://localhost:4000/documents")
+      .get("https://api-googledoc-clone.herokuapp.com/documents")
       .then((res) => setDocumentsList(res.data)
       
       );
@@ -84,7 +84,7 @@ export default function DocumentsList() {
                           );
                           axios
                             .delete(
-                              "http://localhost:4000/documents/" + document._id
+                              "https://api-googledoc-clone.herokuapp.com/documents/" + document._id
                             )
                             .then()
                             .catch((err) => console.log(err));

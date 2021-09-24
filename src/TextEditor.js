@@ -14,7 +14,7 @@ export default function TextEditor() {
 
   // connecting to the socket
   useEffect(() => {
-    const s = io("http://localhost:3001");
+    const s = io("https://api-googledoc-clone.herokuapp.com/");
     setSocket(s);
 
     return () => {
