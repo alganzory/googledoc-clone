@@ -3,12 +3,19 @@ import axios from "axios";
 
 export default function DocumentsList() {
   const [documentsList, setDocumentsList] = useState([]);
+  const [thumbnailsList, setThumbnails] = useState([]);
   useEffect(() => {
+    
     axios
       .get("https://api-googledoc-clone.herokuapp.com/documents")
-      .then((res) => setDocumentsList(res.data)
-      
+      .then((res) => {
+        setDocumentsList(res.data)
+        axios.get ("https://api-googledoc-clone.herokuapp.com/documentThumbnail/"+res.data[0]._id)
+        .then(ressss => console.log(ressss));
+      }
       );
+
+
 
   }, []);
 
