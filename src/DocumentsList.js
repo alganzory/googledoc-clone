@@ -10,8 +10,7 @@ export default function DocumentsList() {
       .get("https://api-googledoc-clone.herokuapp.com/documents")
       .then((res) => {
         setDocumentsList(res.data)
-        axios.get ("https://api-googledoc-clone.herokuapp.com/document-thumbnail/"+res.data[0]._id)
-        .then(ressss => console.log(ressss));
+
       }
       );
 
@@ -54,7 +53,7 @@ export default function DocumentsList() {
                     >
                     <img
                       className="document-thumbnail"
-                      src={`./images/${document.screenshotPath}.png`}
+                      src={`https://api-googledoc-clone.herokuapp.com/document-thumbnails/${document._id}-screenshot.png`}
                       alt={document.title}
                       style={{ width: "100%" }} 
                     />
