@@ -37,7 +37,7 @@ export default function DocumentsList() {
       </div>
       <div className="document-cards-container">
         <div className="document-cards-grid">
-         {documentsList
+         {documentsList.length===0
             ? documentsList.map((document, idx) => (
                 <div className="document-card-card">
                   <div className="thumbnail-holder">
@@ -97,7 +97,7 @@ export default function DocumentsList() {
                   </div>
                 </div>
               ))
-            : ""}
+            : "Loading Documents..."}
         </div>
       </div>
     </>
