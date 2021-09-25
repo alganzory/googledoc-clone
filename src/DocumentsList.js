@@ -37,14 +37,7 @@ export default function DocumentsList() {
       </div>
       <div className="document-cards-container">
         <div className="document-cards-grid">
-          {/* {
-            documentsList?
-            documentsList.forEach (document => {
-              const documentImage =require (`./imgs/${document._id}-screenshot.png`).default;
-              documentsImages.push(documentImage); 
-            }):""
-          } */}
-          {documentsList
+         {documentsList
             ? documentsList.map((document, idx) => (
                 <div className="document-card-card">
                   <div className="thumbnail-holder">
@@ -53,7 +46,7 @@ export default function DocumentsList() {
                     >
                     <img
                       className="document-thumbnail"
-                      src={`https://api-googledoc-clone.herokuapp.com/${document.screenshotPath}.png`}
+                      src={`https://api-googledoc-clone.herokuapp.com/${document._id}-screenshot.png`}
                       alt={document.title}
                       style={{ width: "100%" }} 
                     />
