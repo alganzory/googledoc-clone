@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 export default function DocumentsList() {
-  const [documentsList, setDocumentsList] = useState([]);
+  const [documentsList, setDocumentsList] = useState(null);
 
   useEffect(() => {
     
@@ -37,8 +37,10 @@ export default function DocumentsList() {
       </div>
       <div className="document-cards-container">
         <div className="document-cards-grid">
-         {documentsList.length!==0
-            ? documentsList.map((document, idx) => (
+          
+         {!documentsList? "Loading Documents...": 
+         documentsList.length===0? "No Documents Here..."
+            :documentsList.map((document, idx) => (
                 <div className="document-card-card">
                   <div className="thumbnail-holder">
                   <a
@@ -97,7 +99,7 @@ export default function DocumentsList() {
                   </div>
                 </div>
               ))
-            : "Loading Documents..."}
+            }
         </div>
       </div>
     </>
