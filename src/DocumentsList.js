@@ -97,7 +97,7 @@ export default function DocumentsList() {
                   </div>
                 </div>
               ))
-            : ""}
+            : "Loading Documents..."}
         </div>
       </div>
     </>
