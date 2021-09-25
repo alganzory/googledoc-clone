@@ -53,7 +53,7 @@ export default function DocumentsList() {
                     >
                     <img
                       className="document-thumbnail"
-                      src={`https://api-googledoc-clone.herokuapp.com/${document._id}-screenshot.png`}
+                      src={`https://api-googledoc-clone.herokuapp.com/${document.screenshotPath}.png`}
                       alt={document.title}
                       style={{ width: "100%" }} 
                     />
