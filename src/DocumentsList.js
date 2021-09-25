@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function DocumentsList() {
   const [documentsList, setDocumentsList] = useState([]);
-  const [thumbnailsList, setThumbnails] = useState([]);
+
   useEffect(() => {
     
     axios
@@ -53,7 +53,7 @@ export default function DocumentsList() {
                     >
                     <img
                       className="document-thumbnail"
-                      src={`https://api-googledoc-clone.herokuapp.com/document-thumbnails/${document._id}-screenshot.png`}
+                      src={`https://api-googledoc-clone.herokuapp.com/${document._id}-screenshot.png`}
                       alt={document.title}
                       style={{ width: "100%" }} 
                     />
